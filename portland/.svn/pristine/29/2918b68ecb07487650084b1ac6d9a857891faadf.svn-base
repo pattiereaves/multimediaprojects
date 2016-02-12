@@ -1,0 +1,14 @@
+{
+  "name": "bootstrap3-dialog",
+  "homepage": "https://github.com/nakupanda/bootstrap3-dialog",
+  "_release": "52747b8a1b",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "52747b8a1ba432ce9aa050ee4413e9286db8dd40"
+  },
+  "_source": "git://github.com/nakupanda/bootstrap3-dialog.git",
+  "_target": "*",
+  "_originalSource": "bootstrap3-dialog",
+  "_direct": true
+}

@@ -1,0 +1,64 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Portland at a crossroads: How one vote underscores big changes in Maine's largest city</title>
+
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/a5ad8b0d.favicon.ico">
+
+      <link rel="stylesheet" href="styles/ae3cec6a.vendor.css"/>
+        <link rel="stylesheet" href="styles/d9dabfc5.main.css"/>
+        <script src="scripts/vendor/b2fdd413.modernizr.js"></script>
+
+    </head>
+    <body>
+
+        <div id="page">
+            <div id="intro" onclick="window.open('http://external.bangordailynews.com/projects/2014/06/portland/?utm_source=launcher&utm_campaign=intro')">
+                <div class="inner">
+                    <h1>Portland at a crossroads</h1>
+                    <p class="subtitle">
+                        How one vote underscores big changes in Maine's largest city
+                    </p>   
+                     <div class="call-to-action">
+                        <a href="#" target="_top">
+                            Read More
+                        </a>
+                    </div><!-- call-to-action-->
+                </div><!-- inner -->
+                   
+                </div>
+            </div>
+        </div>
+
+        <script src="scripts/012e461a.vendor.js"></script>
+
+
+
+        <script type="text/javascript">
+        $(function() {
+
+            $('#intro').css({
+                'width': $(window).width(),
+                'height': $(window).height()
+            });
+
+            // Big Video intro
+            var BV = new $.BigVideo({
+                container: $('#intro')
+            });
+            BV.init();
+            if (Modernizr.touch) {
+                BV.show('images/priced-out-static-image.png');
+            } else {
+                BV.show(
+                    'http://watchvideo.bangordailynews.com/bdn/2014/06/port_proj_cine_1719549.m4v', {
+                        ambient: true
+                    }
+                );
+            }
+        });
+        </script>
+</body>
+</html>

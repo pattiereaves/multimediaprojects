@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<iframe src="launcher.html" frameborder="0" width="600"  height="300"></iframe>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <title>Portland at a crossroads: How one vote underscores big changes in Maine's largest city</title>
+
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" href="/favicon.ico">
+
+      <!-- build:css styles/vendor.css -->
+      <!-- bower:css -->
+      <link rel="stylesheet" href="../bower_components/video.js/dist/video-js/video-js.css" />
+      <link rel="stylesheet" href="../bower_components/bootstrap3-dialog/css/bootstrap-dialog.min.css" />
+      <!-- endbower -->
+      <!-- endbuild -->
+        <!-- build:css(.tmp) styles/main.css -->
+                <link rel="stylesheet" href="styles/main.css">
+                <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+
+    </head>
+    <body>
+
+        <div id="page">
+            <div id="intro" onclick="window.open('http://external.bangordailynews.com/projects/2014/06/portland/?utm_source=launcher&utm_campaign=intro')">
+                <div class="inner">
+                    <h1>Portland at a crossroads</h1>
+                    <p class="subtitle">
+                        How one vote underscores big changes in Maine's largest city
+                    </p>   
+                     <div class="call-to-action">
+                        <a href="#" target="_top">
+                            Read More
+                        </a>
+                    </div><!-- call-to-action-->
+                </div><!-- inner -->
+                   
+                </div>
+            </div>
+        </div>
+
+        <!-- build:js scripts/vendor.js -->
+               <!-- bower:js -->
+               <script src="../bower_components/jquery/dist/jquery.js"></script>
+               <script src="../bower_components/handlebars/handlebars.js"></script>
+               <script src="../bower_components/jquery.lazyload/jquery.lazyload.js"></script>
+               <script src="../bower_components/jquery.lazyload/jquery.scrollstop.js"></script>
+               <script src="../bower_components/jquery-ui/ui/jquery-ui.js"></script>
+               <script src="../bower_components/video.js/dist/video-js/video.js"></script>
+               <script src="../bower_components/eventEmitter/EventEmitter.js"></script>
+               <script src="../bower_components/eventie/eventie.js"></script>
+               <script src="../bower_components/imagesloaded/imagesloaded.js"></script>
+               <script src="../bower_components/bigvideo.js/lib/bigvideo.js"></script>
+               <script src="../bower_components/bootstrap3-dialog/js/bootstrap-dialog.min.js"></script>
+               <!-- endbower -->
+               <!-- endbuild -->
+
+
+
+        <script type="text/javascript">
+        $(function() {
+
+            $('#intro').css({
+                'width': $(window).width(),
+                'height': $(window).height()
+            });
+
+            // Big Video intro
+            var BV = new $.BigVideo({
+                container: $('#intro')
+            });
+            BV.init();
+            if (Modernizr.touch) {
+                BV.show('images/priced-out-static-image.png');
+            } else {
+                BV.show(
+                    'http://watchvideo.bangordailynews.com/bdn/2014/06/port_proj_cine_1719549.m4v', {
+                        ambient: true
+                    }
+                );
+            }
+        });
+        </script>
+</body>
+</html>
