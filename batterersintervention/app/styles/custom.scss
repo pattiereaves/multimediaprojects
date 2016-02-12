@@ -1,0 +1,229 @@
+$beige: #3E3633;
+$dark: #0C0B0C;
+$display-font-stack: 'BebasNeueRegular', sans-serif;
+$font-stack: 'ChaparralPro-Light', georgia, serif;
+$sans-font-stack: 'Open Sans', sans-serif;
+
+/* ===================== */
+/*	FONTS				 */
+/* ===================== */
+@font-face{
+  font-family: 'ChaparralPro-Semibold';
+  src: url( 'fonts/ChaparralPro-Semibold.otf' ) format( 'opentype' );
+}
+
+@font-face{
+  font-family: 'ChaparralPro-Light';
+  src: url( 'fonts/ChaparralPro-Light.otf' ) format( 'opentype' );
+}
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+/* ===================== */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $display-font-stack;
+	text-transform: uppercase;
+}
+
+p {
+	font-family: $font-stack;
+}
+
+.byline {
+	font-family: $sans-font-stack;
+	color: $dark;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin: 3em auto 1.618em;
+	font-weight: bold;
+	text-align: center;
+	color: $beige;
+	padding: 0 1em;
+}
+
+.container {
+	width: 100%;
+	max-width: 100%; 
+	margin: 0;
+	padding: 0;
+}
+
+.row {
+	margin-right: 0;
+	margin-left: 0;
+	padding-top: 0;
+}
+
+.caption {
+font-family: $sans-font-stack;
+}
+
+.footer img {
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-right: 20px;
+}
+
+a[href="http://www.google.com/url?q=http%3A%2F%2Fpolls.bangordailynews.com%2Fhow-can-maine-better-rehabilitate-batterers-keep-victims-safe&sa=D&sntz=1&usg=AFQjCNFqEyb6Ms_YIBcDzOv2vUMc77-KEQ"] {
+	color: #fff;
+	background-color: #428bca;
+	padding: 3px;
+	border-radius: 2px;
+}
+
+#intro .subtitle {
+	font-size: 200%;
+	line-height: 120%;
+	font-family: $font-stack;
+	text-align: left;
+	width: 100%;
+	margin-bottom: 100px;
+}
+
+
+#intro h1.title {
+	font-size: 800%;
+	padding: 0;
+	margin: 0;
+	color: $beige;
+	line-height: 100%;
+	text-align: left;
+	width: 100%;
+}
+
+#intro .inner {
+	width: auto;
+}
+
+.big-video-wrap {
+	position: absolute;
+	z-index: 0;
+}
+
+.cards .row {
+	clear: both;
+}
+
+p.text {
+	max-width: 600px;
+	margin: 1.618em auto;
+}
+
+.cards h2 {
+	margin: .618em auto .618em;
+	font-size: 300%;
+}
+
+.size-small {
+	width: 20%;
+}
+
+.photo.size-small .caption {
+	font-size: .618em;
+}
+
+.call-to-action a {
+	display: inline-block;
+	width: auto;
+	background: rgba(255, 255, 255, 0.6);
+	color: $dark;
+	border-radius: 0.5em;
+	margin: 1.618em 0 0;
+	padding: 1em;
+	font-size: 150%;
+	text-decoration: none;
+	font-family: $sans-font-stack;
+}
+
+.call-to-action {
+	text-align: left;
+}
+
+.credits p {
+	font-size: 120%;
+	font-style: italic;
+}
+
+.credits .photo {
+	max-width: 400px;
+	margin: 0 auto 1.618em;
+}
+
+#card-2 h2 {
+	display: none;
+}
+
+@media (min-width: 1200px) {
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 1330px) {
+	#intro .inner {
+		margin-left: 10px;
+	}
+}
+
+@media (max-width: 650px) {
+
+	.size-small {
+		float: none;
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.photo.size-small .caption {
+		font-size: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	p.text {
+		margin: 1.618em .618em;
+	}
+
+}
+
+@media (max-width: 460px) {
+	#intro .subtitle {
+		font-size: 150%; 
+	}
+
+	#intro .inner {
+		margin-top: 25%;
+	}
+
+	#intro .subtitle {
+		margin-bottom: 1.15em;
+	}
+
+	.byline {
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+}
+
+@media (max-width: 400px) {
+	#intro h1.title {
+		font-size: 500%;
+	}
+
+	html, body {
+		font-size: 20px;
+	}
+}
