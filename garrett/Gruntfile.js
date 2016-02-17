@@ -405,23 +405,23 @@ module.exports = function (grunt) {
     // To use this, you'll need to configure the authorization keys 
     // in .ftppass in the project's root directory.
 
-    // ftpush: {
-    //     build: {
-    //         auth: {
-    //             host: 'bdn.pzunk.net',
-    //             port: 21,
-    //             authKey: 'key1'
-    //         },
-    //         src: '<%= config.dist %>',
-    //         dest: 'bdn.pzunk.net/garrett',
-    //         exclusions: [],
-    //         keep: [],
-    //         // exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
-    //         // keep: ['/important/images/at/server/*.jpg'],
-    //         simple: false,
-    //         useList: false
-    //     }
-    // }
+    ftpush: {
+        build: {
+            auth: {
+                host: 'bdn.pzunk.net',
+                port: 21,
+                authKey: 'key1'
+            },
+            src: '<%= config.dist %>',
+            dest: 'bdn.pzunk.net/garrett',
+            exclusions: [],
+            keep: [],
+            // exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
+            // keep: ['/important/images/at/server/*.jpg'],
+            simple: false,
+            useList: false
+        }
+    }
 
   });
 
@@ -479,7 +479,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin',
     'image_resize'
-    //,'ftpush'
+    ,'ftpush'
   ]);
 
   grunt.registerTask('default', [

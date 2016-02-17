@@ -97,7 +97,7 @@ function create_json_file( $doc_url, $file_name ) {
 
 				$rich_media = json_decode($clean_string);
 				if( is_null($rich_media) ) 
-					die( 'There is a parse error with your rich media: ' . var_dump( $clean_string ));
+					die( 'There is a parse error with your rich media: ' .  $clean_string );
 
 				if( is_null($rich_media->filetype) )
 					die( 'Your rich media is missing attributes. ' . var_dump($clean_string) );

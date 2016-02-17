@@ -1,11 +1,11 @@
 [
 	{
 		"name" : "Garrett",
-		"subtitle" : "",
-		"extended_description" : "",
-		"video" : "",
-		"poster" : "",
-		"doc" : "https://docs.google.com/document/d/19o4Q1XbeITcagVgbCNK0tQvLmzxqFFRAL8Eofqrhu_I/pub",
+		"subtitle" : "Inside the life and fall of a young Maine man addicted to heroin",
+		"extended_description" : "I watched this man battle an addiction to heroin for more than 2 years",
+		"video" : "http://watchvideo.bangordailynews.com/bdn/2016/02/GarrettBrown_2134210.m4v",
+		"poster" : "../images/header_h.jpg",
+		"doc" : "https://docs.google.com/document/d/1zeUzeTbf3bQpz53qjX1F_98EhAYfCGgXwAHApKC6Cds/pub",
 		"byline" : "Erin Rhoda, Maine Focus editor"
 	}
 ]
