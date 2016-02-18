@@ -2,8 +2,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
-@import "richmedia.scss";
 
+
+@import "richmedia";
 
 @font-face{
   font-family: 'ChaparralPro-Semibold';
@@ -28,4 +29,4 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-@import "custom.scss";
+@import "custom";

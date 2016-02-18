@@ -33,7 +33,7 @@ function create_json_file( $doc_url, $file_name ) {
 	$file = mb_convert_encoding($string, 'html-entities', 'utf-8'); 
 
 	// Replaces the italics and the bolds in the string.
-	preg_match_all( '/.c(?P<digit>\d+){[^}]*(?>font-style:bold)[^{]*}/im', $file, $matches['strong'] );
+	preg_match_all( '/.c(?P<digit>\d+){[^}]*(?>font-weight:bold)[^{]*}/im', $file, $matches['strong'] );
 	preg_match_all('/.c(?P<digit>\d+){[^}]*(?>font-style:italic)[^{]*}/im', $file, $matches['em']);
 
 	foreach( $matches as $type => $match ) {
@@ -133,7 +133,11 @@ function create_json_file( $doc_url, $file_name ) {
 					$listItems = array();
 
 					foreach( $element->childNodes as $item ) {
-						$listItems[] = trim(strip_tags($item->textContent, '<a><em><strong>'));
+						$v = trim(strip_tags($doc->saveXml( $item ), '<a><em><strong>'));
+
+						if( !empty($v) ) {
+							$listItems[] = $v;
+						}
 					}
 
 					$output['chapters'][$heading]['content'][] = array(
@@ -205,6 +209,5 @@ function import_video(&$filename) {
 			die("We couldn't find a video match at {$url}. \n");
 		}
 	}
-
 
 }

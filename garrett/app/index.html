@@ -2,12 +2,12 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>garrett</title>
+    <title>Garrett: Inside the life and fall of a young Maine man addicted to heroin</title>
 
 
     <!-- Facebook Meta Tags -->
-    <meta property="og:title" content="garrett">
-    <meta name="description" content="">
+    <meta property="og:title" content="Garrett">
+    <meta name="description" content="Inside the life and fall of a young Maine man addicted to heroin">
     <meta property="og:url" content="">
     <meta property="og:image" content="">
 
@@ -22,7 +22,6 @@
 
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap3-dialog/dist/css/bootstrap-dialog.min.css" />
     <link rel="stylesheet" href="bower_components/video.js/dist/video-js/video-js.css" />
     <!-- endbower -->
     <!-- endbuild -->
@@ -88,9 +87,9 @@
                 .addService(googletag.pubads())
                 .setTargeting("pos", "bottom");
 
-            googletag.pubads().setTargeting('author', '');
+            googletag.pubads().setTargeting('author', 'Erin Rhoda');
             googletag.pubads().setTargeting("pid", pid_value);
-            googletag.pubads().setTargeting("kw", ['']);
+            googletag.pubads().setTargeting("kw", ['Garrett, Maine Focus']);
             googletag.pubads().enableSingleRequest();
             googletag.pubads().collapseEmptyDivs();
             googletag.enableServices();
@@ -102,14 +101,22 @@
     <!--[if lt IE 10]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=837878406249973";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="page">
 
       <div id="intro">
           <div class="inner" id="title-slide">
-              <h1 class="title">garrett</h1>
+              <h1 class="title">Garrett</h1>
               <div class="subtitle">
-                A great sub-title about a great project.
+                Inside the life and fall of a young Maine man addicted to heroin
               </div>
             </div><!-- /.inner -->
           <div class="logo">
@@ -121,8 +128,11 @@
 
           <div class="container">
               <div class="row" id="chapters">
+                <div class="col-xs-12 hide-after-chapters well well-lg bg-warning">
+                  <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span> Loading...
+                </div>
                   <script id="card-template" type="text/x-handlerbars-template">
-                      <div class='cards' id="card-{{index}}">
+                      <div class='cards col-xs-12' id="card-{{chapterName}}-{{index}}">
                           <a name="card-{{heading}}"></a>
                           <h2>{{heading}}</h2>
                           {{#each content}}
@@ -143,12 +153,26 @@
               <span class="glyphicon glyphicon-chevron-down"></span>
           </p><!-- /.scroll-cue -->
 
-          <div class="footer container">
+          <div class="footer container-fluid hidden show-after-chapters">
+
+            <div class="row">
+              <div class="col-xs-12">
+                  <a name="comments"></a>
+                  <div class="fb-comments" 
+                    data-href="http://external.bangordailynews.com/projects/2016/02/garrett" 
+                    data-numposts="10"
+                    data-width="100%"
+                    data-colorscheme="light"
+                  >
+                  </div>
+              </div>
+            </div>
               <a href="#card-Credits">
                   <img src="images/bdnmaine.png" alt="A BDN Maine Project" width="50">
               </a>
-              <p>Copyright 2016 BDN Maine</p>
+              <p>Copyright Feb 22, 2016 BDN Maine</p>
           </div>
+
 
     </div><!-- /#page -->
 
@@ -201,15 +225,9 @@
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tooltip.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/popover.js"></script>
     <script src="bower_components/handlebars/handlebars.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/bootstrap3-dialog/dist/js/bootstrap-dialog.min.js"></script>
     <script src="bower_components/jquery.lazyload/jquery.lazyload.js"></script>
     <script src="bower_components/jquery.lazyload/jquery.scrollstop.js"></script>
-    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="bower_components/video.js/dist/video-js/video.js"></script>
-    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/bigvideo.js/lib/bigvideo.js"></script>
     <script src="bower_components/ba-dotimeout/jquery.ba-dotimeout.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->

@@ -2,7 +2,7 @@
  * Main styling and functionality
  *
  * @author  Pattie Reaves <preaves@bangordailynews.com>
- * @copyright 2014 Bangor Daily News
+ * @copyright 2016 Bangor Daily News
  */
 /*jshint strict:false */
 /*global $:false */
@@ -16,6 +16,14 @@ function sizeFunctions() {
         'width': $(window).width(),
         'height': $(window).height()
     });
+}
+
+function windowIsHorizontal() {
+    if( $(window).width() > $(window).height() ) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function setUpVideos(videos) {
@@ -77,59 +85,7 @@ function setUpVideos(videos) {
     } //for key in videos
 } // Set up Videos
 
-function setUpAmbientVideos( ambientVideos ) {
-
-    $( '.ambient_video' ).each( function( index, value ) {
-
-        // Get data from div
-        var ambientVideo = new Object;
-        ambientVideo.ID = $(this).attr( 'id' );
-        ambientVideo.video = $(this).attr( 'data-video' );
-        ambientVideo.image = $(this).attr( 'data-static' );
-        
-
-        // Replace div with big videos.
-        ambientVideos[ambientVideo.ID] = new $.BigVideo({
-            container: $(this).parents('.cards'),
-            shrinkable:true,
-            useFlashForFirefox:false
-        });
-
-        ambientVideos[ambientVideo.ID].init();
-
-        if(Modernizr.touch) {
-            ambientVideos[ambientVideo.ID].show(ambientVideo.image);
-        } else {
-            ambientVideos[ambientVideo.ID].show(
-                ambientVideo.video, {
-                    ambient: true
-                }
-            );
-        }
-
-        $( this ).parents('.cards').addClass( 'ambient-video-background' );
-        $( this ).remove();
-
-    }); // each ambient_video
-
-} // Set up AmbientVideos
-
-$(function() {
-
-    // Big Video intro
-    // var BV = new $.BigVideo({
-    //     container: $('#intro')
-    // });
-    // BV.init();
-    // if (Modernizr.touch) {
-    //     BV.show('images/kenduskeag_night.jpg');
-    // } else {
-    //     BV.show(
-    //         'http://watchvideo.bangordailynews.com/bdn/2014/06/kenduskeag_night_1735266.m4v', {
-    //             ambient: true
-    //         }
-    //     );
-    // }
+$( function() {
 
     var videos = new Object;
 
@@ -216,34 +172,41 @@ $(function() {
                             $(this).attr('target', '_blank');
                         });
 
-                        $('#card-3').prepend('<div class="byline">By '+ displayChapter.byline +'</div>')
+                        $('#card--2').prepend('<div class="byline">By '+ displayChapter.byline +'</div>')
 
 
 
-                        shareButtons = '<div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_email">E-mail</a><a class="addthis_button_facebook">Share</a><a class="addthis_button_twitter">Tweet</a></div>';
+                        shareButtons = '<div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_email"></a><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a></div>';
                         $('.byline').append(shareButtons);
                         $('div.cards:last-of-type p.text:first-of-type').prepend('<div class="byline">' + shareButtons + '</div>');
                         addthis.init();
 
+                        var poster = windowIsHorizontal() ? displayChapter.poster_landscape : displayChapter.poster_portrait;
+
                         $('#intro').css({
-                            'background':'no-repeat center center url("images/' + displayChapter.poster + '")',
+                            'background':'no-repeat center center url("'+poster+'")',
                             'background-size':'cover'
                         });
 
                         // Add the ad tags
-                        $('<div class="rich-media size-medium ad orientation-right"><div id="bdnads-top-300x600"></div></div>').insertAfter($('#card-3 p.text:nth-last-of-type(6)').first());
+                        $('<div class="rich-media size-medium ad orientation-right"><div id="bdnads-top-300x600"></div></div>').insertAfter($('#card--3 p.text:nth-last-of-type(6)').first());
                         googletag.cmd.push(function() {
                             googletag.display("bdnads-top-300x600");
                         });
 
                         for( i = 1; i < 5; i++ ) {
-                            $('<div class="rich-media size-medium ad orientation-left"><div id="bdnads-bottom-300x250-'+i+'"></div></div>').insertAfter($('#card-'+ eval(3 + i) +' p.text:nth-last-of-type(4)').first());
+                            $('<div class="rich-media size-medium ad orientation-left"><div id="bdnads-bottom-300x250-'+i+'"></div></div>').insertAfter($('#card--'+ eval(3 + i) +' p.text:nth-last-of-type(4)').first());
                             googletag.cmd.push(function() {
                               googletag.display('bdnads-bottom-300x250-'+ i);
                             });
                         }
 
                         $('.ad').prepend('<h6><span>Story continues after </span>Paid Advertisement</h6>');
+
+                         $( '.hide-after-chapters').addClass('hidden');
+                         // show the credits box.
+                            $( '.show-after-chapters.hidden').removeClass('hidden');
+                           
 
                     } //success chapter data
                 ); //getJSON chapter

@@ -6,3 +6,89 @@ $dark: #0C0B0C;
 $display-font-stack: 'BebasNeueRegular', sans-serif;
 $font-stack: 'ChaparralPro-Light', georgia, serif;
 $sans-font-stack: 'Open Sans', sans-serif;
+
+
+
+#intro {
+	text-indent: -99999px;
+	overflow: hidden;
+}
+
+.cards:not(#card--2) {
+	h2 {
+		text-indent: -9999px;
+		overflow: hidden;
+
+		& + p.text {
+
+			&::first-letter { 
+				float: left; 
+				color: $dark; 
+				font-size: 75px; 
+				line-height: 60px; 
+				padding-top: 4px; 
+				padding-right: 4px; 
+				padding-left: 3px; 
+				font-family: 'ChaparralPro-Semibold', sans-serif;
+			}
+		}
+	}
+}
+
+ul, ol {
+	font-family: $font-stack;
+}
+
+#card--2 {
+
+	h2 {
+		display: none;
+	}
+
+	//The date at the start of the story.
+	.text:nth-child(5), 
+	.text:nth-child(6) {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.addthis_toolbox {
+	margin-top: 10px;
+
+	& > a {
+		float: none !important;
+	}
+}
+
+p strong {
+	font-family: 'ChaparralPro-Semibold', sans-serif;
+}
+
+
+.fb-comments {
+	margin: 0 auto;
+}
+
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+
+@media (max-width: 600px) {
+	.scroll-cue {
+		display: none;
+	}
+}
