@@ -37,6 +37,8 @@ $sans-font-stack: 'Open Sans', sans-serif;
 
 ul, ol {
 	font-family: $font-stack;
+	  max-width: 600px;
+  margin: 1.618em auto;
 }
 
 #card--2 {
@@ -50,6 +52,14 @@ ul, ol {
 	.text:nth-child(6) {
 		margin-top: 0;
 		margin-bottom: 0;
+	}
+}
+
+
+#card--24 {
+	h2 {
+		text-indent: initial;
+		display: block;
 	}
 }
 
