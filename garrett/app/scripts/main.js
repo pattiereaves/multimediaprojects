@@ -19,7 +19,7 @@ function sizeFunctions() {
 }
 
 function windowIsHorizontal() {
-    if( $(window).width() > $(window).height() ) {
+    if( $(window).width() >= $(window).height() ) {
         return true;
     } else {
         return false;
@@ -98,7 +98,7 @@ $( function() {
         'data/chapters.json',
         function(mainChapters) {
 
-            console.log(mainChapters);
+            // console.log(mainChapters);
 
             // Find the chapter we want to display based on the URL.
             var displayChapter = mainChapters[0]; //initialize at first chapter
@@ -205,7 +205,17 @@ $( function() {
 
                          $( '.hide-after-chapters').addClass('hidden');
                          // show the credits box.
-                            $( '.show-after-chapters.hidden').removeClass('hidden');
+                        $( '.show-after-chapters.hidden').removeClass('hidden');
+
+
+                        var maineFocusLogo = '<div class="maine-focus-logo" data-spy="affix" data-offset-top="60">' +
+                                '<a href="http://mainefocus.bangordailynews.com">' +
+                                    '<img src="images/mainefocus.png" alt="A BDN Maine Project" height="50">' +
+                                '</a>' +
+                            '</div>';
+
+                        $( '.byline' ).prepend( maineFocusLogo );
+
                            
 
                     } //success chapter data

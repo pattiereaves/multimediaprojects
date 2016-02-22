@@ -12,6 +12,8 @@ $sans-font-stack: 'Open Sans', sans-serif;
 #intro {
 	text-indent: -99999px;
 	overflow: hidden;
+	z-index: 1000;
+	position: relative;
 }
 
 .cards:not(#card--2) {
@@ -97,8 +99,8 @@ p strong {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 	.scroll-cue {
-		display: none;
+		display: none; //Hidden by AddThis 
 	}
 }
