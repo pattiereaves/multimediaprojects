@@ -8,7 +8,6 @@ $font-stack: 'ChaparralPro-Light', georgia, serif;
 $sans-font-stack: 'Open Sans', sans-serif;
 
 
-
 #intro {
 	text-indent: -99999px;
 	overflow: hidden;
@@ -96,6 +95,22 @@ p strong {
 @keyframes spin {
     from { transform: scale(1) rotate(0deg);}
     to { transform: scale(1) rotate(360deg);}
+}
+
+.comment-call-to-action {
+	background-color: $light-background;
+	padding: 5%;
+	cursor: pointer;	
+
+	p {
+		@extend .h3 !optional;
+		line-height: 150%;
+		font-family: $sans-font-stack;
+
+		&:last-child {
+			@extend .h1 !optional;
+		}
+	}
 }
 
 

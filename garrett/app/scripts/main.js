@@ -207,16 +207,11 @@ $( function() {
                          // show the credits box.
                         $( '.show-after-chapters.hidden').removeClass('hidden');
 
-
-                        var maineFocusLogo = '<div class="maine-focus-logo" data-spy="affix" data-offset-top="60">' +
-                                '<a href="http://mainefocus.bangordailynews.com">' +
-                                    '<img src="images/mainefocus.png" alt="A BDN Maine Project" height="50">' +
-                                '</a>' +
-                            '</div>';
-
-                        $( '.byline' ).prepend( maineFocusLogo );
-
-                           
+                        $('.comment-call-to-action').click(function() {
+                            $( this ).toggle();
+                            $('.fb-comments').toggle()
+                        }
+                        );
 
                     } //success chapter data
                 ); //getJSON chapter
@@ -257,6 +252,16 @@ $( function() {
             // And the video is not playing. 
             if( ( $(window).scrollTop() + $(window).height() ) < $( document ).height() && !$( '.video-js' ).hasClass( 'vjs-playing' )) {
                 $( '.scroll-cue' ).fadeIn(600);
+            }
+        });
+
+        // Show and hide the Maine Focus Logo if you aren't scrolling
+        $( '.logo' ).fadeOut();
+        $.doTimeout( 'scroll', 1000, function(){
+            // Only bring back the scroll cue if we aren't at the bottom 
+            // And the video is not playing. 
+            if( ( $(window).scrollTop() + $(window).height() ) < $( document ).height() && !$( '.video-js' ).hasClass( 'vjs-playing' )) {
+                $( '.logo' ).fadeIn(600);
             }
         });
         
