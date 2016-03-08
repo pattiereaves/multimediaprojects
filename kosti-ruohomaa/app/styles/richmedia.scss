@@ -104,8 +104,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .size-small {
-    width: 25%;
-    max-width: 200px;
+    width: 30%;
+    max-width: 300px;
 }
 
 .orientation-left {
@@ -380,10 +380,6 @@ p.text {
     font-size: 300%;
 }
 
-.size-small {
-    width: 20%;
-}
-
 .photo.size-small .caption {
     font-size: .618em;
 }
@@ -473,12 +469,72 @@ a.navbar-brand {
 }
 
 
+ul, ol {
+    font-family: $font-stack;
+      max-width: 600px;
+  margin: 1.618em auto;
+}
 
+.addthis_toolbox {
+    margin-top: 10px;
+
+    & > a {
+        float: none !important;
+    }
+}
+
+p strong {
+    font-family: 'ChaparralPro-Semibold', sans-serif;
+}
+
+
+.fb-comments {
+    margin: 0 auto;
+}
+
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.comment-call-to-action {
+    background-color: $light-background;
+    padding: 5%;
+    cursor: pointer;    
+
+    p {
+        @extend .h3 !optional;
+        line-height: 150%;
+        font-family: $sans-font-stack;
+
+        &:last-child {
+            @extend .h1 !optional;
+        }
+    }
+}
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1200px;
         margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .scroll-cue {
+        display: none; //Hidden by AddThis 
     }
 }
 

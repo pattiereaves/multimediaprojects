@@ -18,6 +18,13 @@ function sizeFunctions() {
     });
 }
 
+function windowIsHorizontal() {
+    if( $(window).width() >= $(window).height() ) {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function setUpVideos(videos) {
 
@@ -161,27 +168,26 @@ $(function() {
 
                         setUpVideos(videos);
 
-
                         $.each($('a'), function() {
                             $(this).attr('target', '_blank');
                         });
 
-                        $('#card-1').prepend('<div class="byline">By '+ displayChapter.byline +'</div>')
+                        $('#card-2').prepend('<div class="byline">By '+ displayChapter.byline +'</div>')
 
-
-
-                        shareButtons = '<div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_email">E-mail</a><a class="addthis_button_facebook">Share</a><a class="addthis_button_twitter">Tweet</a></div>';
+                        shareButtons = '<div class="addthis_toolbox addthis_default_style addthis_32x32_style"><a class="addthis_button_email"></a><a class="addthis_button_facebook"></a><a class="addthis_button_twitter"></a></div>';
                         $('.byline').append(shareButtons);
-                        $('div.cards:last-of-type p.text:first-of-type').prepend('<div class="byline">' + shareButtons + '</div>');
+                        $('div.cards:last-of-type p.text:last-of-type').append('<div class="byline">' + shareButtons + '</div>');
                         addthis.init();
 
+                        var poster = windowIsHorizontal() ? displayChapter.poster_landscape : displayChapter.poster_portrait;
+
                         $('#intro').css({
-                            'background':'no-repeat center center url("images/' + displayChapter.poster + '")',
-                            'background-size':'cover'
+                            'background':'no-repeat center center url("images/' + poster + '")',
+                            'background-size':'contain'
                         });
 
                         // Add the ad tags
-                        $('<div class="rich-media size-medium ad orientation-right"><div id="bdnads-top-300x600"></div></div>').insertAfter($('#card-3 p.text:nth-last-of-type(6)').first());
+                        $('<div class="rich-media size-medium ad orientation-right"><div id="bdnads-top-300x600"></div></div>').insertAfter($('#card-3 p.text:nth-last-of-type(8)').first());
                         googletag.cmd.push(function() {
                             googletag.display("bdnads-top-300x600");
                         });

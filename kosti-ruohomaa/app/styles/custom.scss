@@ -8,7 +8,7 @@ $font-stack: 'ChaparralPro-Light', georgia, serif;
 $sans-font-stack: 'Open Sans', sans-serif;
 
 #intro div {
-	@extend .sr-only;
+	@extend .sr-only !optional;
 }
 
 #card-2 {
