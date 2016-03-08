@@ -1,0 +1,64 @@
+$(function() {
+
+	$.getJSON("js/slide-content.js", function(data) {
+		console.log('success.')
+	})
+	.fail(function() {
+		console.log('failure!!!!!');
+	})
+	.done(function ( data ) {
+		$.each( data.slides, function (i, slide) {
+
+			// get the slidr div
+			// build the html of each div inside the slidr.
+
+			var slideTemplate = "<div class='slide' id='slide" + i + "' data-slidr='" + slide.title + "' data-background='" + slide.background + "'>";
+				slideTemplate += "	<h2>" + slide.title + "</h2>";
+				slideTemplate += "	<p>" + slide.description + "</p> ";
+				slideTemplate += "</div>";
+
+			$("#slidr").append(slideTemplate);
+
+			$("#slidr-container")
+				.css(
+					"background",
+					'url("' + $(".slide").first().attr("data-background") + '")'
+				);
+
+		});
+
+		slidr.create('slidr', {
+		  after: function(e) {
+		  	console.log("in: " + e.in.slidr);
+		  	// Get the slide data from the next slide
+		  	$('#slidr-container')
+		  		.css(
+		  			"background", 
+		  			'url("' + e.in.el.getAttribute('data-background') + '")'
+	  			);
+  			console.log("setting the background to: " + e.in.el.getAttribute('data-background'));
+		  },
+		  before: function(e) { 
+		  	console.log('out: ' + e.out.slidr); 
+		  	// console.log(e.out.el.getAttribute('data-background'));
+		  },
+		  breadcrumbs: true,
+		  controls: 'border',
+		  direction: 'vertical',
+		  fade: true,
+		  keyboard: true,
+		  overflow: false,
+		  theme: '#222',
+		  timing: { 'cube': '0.5s ease-in' },
+		  touch: true,
+		  transition: 'cube'
+		}).start();
+
+	});
+
+});
+
+
+
+
+

@@ -1,0 +1,116 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+#slidr {
+	padding: 0 2em 2em;
+	color: rgb(255, 255, 255);
+	font-size: 70%;
+	line-height: 100%;
+	text-shadow: 1px 1px rgba(255,255,255,.1);
+	position: absolute;
+	bottom: 10%;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, .5);
+	border: 1px solid rgba(0,0,0,.5);
+	border-radius:5px;
+	max-height: 80%;
+}
+
+.slide-container {
+	padding: 2em 0;
+}
+
+.slide  {
+	max-height: 100%;
+	overflow: scroll;
+	margin: 0 auto;
+	width: 80%;
+}
+
+#slidr-container {
+	width: 100%;
+	min-height: 100%;
+}
+
+.jumbotron {
+	background: transparent;
+}
+
+.slide a {
+	background: rgba(0,0,0,.7);
+}
+
+.slide a:hover {
+	background: rgba(255,255,255,.7);
+	text-decoration: none;
+}
+
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li {
+  width: 15px !important;
+  height: 15px !important;
+  margin: 3px !important;
+}
+
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li.normal {
+  border-color: white !important;
+}
+
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li.active {
+  background-color: black !important;
+}
+
+aside[id="slidr-control"] .slidr-control:after {
+  border-color: transparent !important;
+}
+aside[id="slidr-control"] .slidr-control.left,
+aside[id="slidr-control"] .slidr-control.right {
+  width: 50px !important;
+  height: 50px !important;
+  top: 50% !important;
+  margin-top: -25px !important;
+  border-radius: 25px;
+  opacity: 0.4;
+}
+aside[id="slidr-control"] .slidr-control.left:hover,
+aside[id="slidr-control"] .slidr-control.right:hover {
+  opacity: 1;
+}
+aside[id="slidr-control"] .slidr-control.left {
+  left: -25px !important;
+  background: url('../img/arrow_left.png') 14px 13px no-repeat #000000;
+}
+aside[id="slidr-control"] .slidr-control.right {
+  right: -25px !important;
+  background: url('../img/arrow_right.png') 14px 13px no-repeat #000000;
+}
+aside[id="slidr-breadcrumbs"] {
+	margin: 1em auto;
+	position: absolute;
+	bottom: 0 !important;
+	right: 0 !important;
+	width: 100%;
+	display: block;
+}
+
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs {
+	text-align: center !important;
+}
+
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li {
+  width: 15px !important;
+  height: 15px !important;
+  margin: 3px !important;
+}
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li.normal {
+  border-color: rgba(255, 255, 255, .7) !important;
+}
+aside[id="slidr-breadcrumbs"] .slidr-breadcrumbs li.active {
+  background-color: #428bca !important;
+}

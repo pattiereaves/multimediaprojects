@@ -1,0 +1,315 @@
+$light-background: #E1E7F1;
+$dark-background: #C1BEB9;
+$blue: #0E0E0E;
+
+html, body {
+	font-size: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	clear: both;
+}
+
+.row {
+	position: relative;
+	z-index: 10;
+	padding: 15px 0;
+}
+
+.video {
+	height: auto;
+	overflow: auto;
+	display: block;
+}
+
+.size-full {
+	width: 100%;
+}
+
+.video-js {
+	padding-top: 56.25%;
+}
+
+.vjs-fullscreen {padding-top: 0px}
+
+.jumbotron p {
+	line-height: 200%;
+}
+
+.photo img {
+	width: 100%;
+}
+
+.photo {
+	overflow: auto;
+	background: $light-background;
+}
+
+.rich-media {
+	margin-bottom: 1.618em;
+	max-width: 100%;
+}
+
+.photo .caption {
+	margin: .618em;
+	clear: both;
+	display: block;
+}
+
+.graphic .caption {
+	background: transparent;
+	font-size: .618em;
+	line-height: 1em;
+	text-transform: uppercase;
+	margin: .618em 0;
+}
+
+.graphic .caption .credit {
+	font-style: normal;
+}
+
+.graphic {
+	background: transparent; 
+	border: 0;
+}
+
+.size-medium {
+	width: 50%;
+	max-width: 300px;
+}
+
+.size-small {
+	width: 25%;
+	max-width: 200px;
+}
+
+.orientation-left {
+	float: left;
+	margin-right: 1.618em;
+	margin-bottom: 1.618em;
+	clear: left;
+}
+
+.orientation-right {
+	float: right;
+	margin-left: 1.618em;
+	margin-bottom: 1.618em;
+	clear: right;
+}
+
+.orientation-full {
+	float: none;
+	clear: both;
+}
+
+.cards h2 {
+	border-bottom: 1px solid $dark-background;
+	color: $blue;
+}
+
+h2 {
+	text-align: center;
+}
+
+.call-to-action a {
+	display: inline-block;
+	margin: 0 auto;
+	width: auto;
+	background: rgba( 0,0,0,.6 );
+	color: $light-background;
+	border-radius: .5em;
+	margin-top: 1.618em;
+	padding: 1em;
+	text-decoration: none;
+	color: #fff;
+}
+
+.call-to-action a:hover {
+	background: $light-background;
+	color: #000;
+}
+
+#big-video-wrap {
+	position: relative;
+	float: left;
+	z-index: 0;
+	overflow: hidden;
+	margin: 0;line-height: 83%;
+}
+
+.logo {
+	z-index: 100;
+	position: fixed;
+	top: 10px;
+	left: 10px;
+	width: 60px;
+	opacity: .8;
+}
+
+.graphic-modal img {
+	max-height: 100%;
+}
+
+.logo img {
+	width: 100%;
+}
+
+.share {
+	color: $light-background;
+	margin: 10px 0 0;
+	display: inline-block;
+	text-shadow: 1px 1px 1px rgba( 0,0,0,1 );
+}
+
+.share:hover {
+	color: $dark-background;
+	text-decoration: none;
+}
+
+.bootstrap-dialog.type-primary .modal-header {
+	background: $dark-background;
+	color: #000;
+}
+
+.page {
+	width: 100%;
+}
+
+.vjs-tech {
+	width: 100%;
+	clear: both;
+}
+
+.big-video-wrap {
+	display: block;
+	position: relative;
+}
+
+.big-video-wrap .vjs-control-bar {
+	display: none;
+}
+
+.scroll-cue {
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+    color: rgba( 255,255,255,1);
+    font-size: 200%;
+    z-index: 1000;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px rgba( 0,0,0,1 );
+}
+
+.scroll-cue .glyphicon {
+    font-size: 50%; 
+}
+
+.ambient-video {
+	z-index: 0;
+}
+
+@media ( max-height: 600px ) {
+    .scroll-cue {display: none}
+}
+
+
+@media ( min-width:992px ) {
+
+	p {
+		font-size: 19px;
+		line-height: 1.618em;
+	}
+
+	.cards p {
+		max-width: 620px;
+		margin: 0 auto 1.618em;
+	}
+
+	h2 {
+		font-size: 2.25em;
+		line-height: 1.25em;
+		margin-bottom: 0.382em;
+	}
+
+	.orientation-right, .orientation-left {
+		position: relative;
+	}
+
+	.photo .caption {
+		font-size: 80%;
+		max-width: 100%;
+	}
+
+}
+
+@media ( max-width:992px ) {
+
+	.video-media.size-medium {
+		width: 50%;
+		max-width: 500px;
+	}
+
+	.size-medium, .size-small {
+		width: 25%;
+		max-width: 300px;
+	}
+}
+
+@media ( max-width:650px ) {
+
+	#intro h1 {
+		font-size: 3em;
+		line-height: 1.25em;
+	}
+
+	.subtitle {
+		font-size: 1.625em;
+		line-height: 1.15384615em;
+	}
+
+	.share {
+		display: none;
+	}
+
+	.orientation-left, .orientation-right {
+		float: right;
+		margin: 0 0 1.15384615em 1.15384615em;
+		clear: right;
+	}
+
+	.rich-media.video-media {
+		clear: none;
+	}
+
+}
+
+@media ( max-width:450px ) { 
+	.logo {
+		width: 40px;
+	}
+
+	.photo {
+		width: 100%;
+		clear: both;
+		float: none;
+		max-width: 100%;
+		margin: 1em 0;
+	}
+
+	.graphic img {
+		margin: 0 auto;
+		max-width: 200px;
+		display: block !important;
+	}
+
+	.rich-media {
+		width: 100%;
+	}
+
+	.video-media.size-medium {
+		width: 100%;
+	}
+}
+

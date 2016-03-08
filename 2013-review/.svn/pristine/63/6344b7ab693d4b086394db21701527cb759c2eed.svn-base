@@ -1,0 +1,177 @@
+$(function() {
+
+	// We need to have a set width on this slidr or it's gonna go nuts resizing.
+	$('#slidr').width(
+		$('#slidr-container').width() - ($("#slidr-container").outerWidth() - $("#slidr-container").width())
+	);
+
+
+	$.getJSON("js/slide-content.js", function(data) {
+		console.log('success.')
+	})
+	.fail(function() {
+		console.log('failure!!!!!');
+	})
+	.done(function ( data ) {
+
+
+
+		var slideImages = [];
+
+
+
+
+		$.each( data.slides, function (i, slide) {
+
+			// get the slidr div
+			// build the html of each div inside the slidr.
+
+			slideNumber = i + ". ";
+			if(i == 0) {
+				slideNumber = '';
+			}
+
+			var slideTemplate = "<div class='slide' id='slide" + i + "' data-slidr='" + slide.title + "' data-background='" + slide.background + "'>";
+			    slideTemplate += "<div class='slide-container'>";
+				slideTemplate += "	<h2>" + slideNumber + slide.title + "</h2>";
+				slideTemplate += "	<p>" + slide.description + "</p>";
+				slideTemplate += "	<p class='byline'><a href='mailto:" + slide.email + "@bangordailynews.com'>" + slide.byline + "</a></p>";
+				slideTemplate += "</div>";
+				slideTemplate += "</div>";
+
+			$("#slidr").append(slideTemplate);
+
+			$("#slidr-container")
+				.css({
+					'background-image' : 'url("' + $('.slide').first().attr('data-background') + '")',
+					'background-color' : 'transparent',
+					'background-position' :  'center',
+					'background-size' : 'cover',
+					'background-repeat' :  'no-repeat',
+					'background-position' : 'fixed' 
+				});
+
+			$('.slide').width($('#slidr').width());		
+
+			/**
+			Get all the image data from the slides.
+			Add those elements to the first slide.
+			**/
+
+			slideImages.push(slide.background)
+
+		});
+
+		$("body").prepend("<div id='preview-image-container'></div>");
+
+		newSlideImages = shuffle(slideImages);
+		for(var i = 0; i < 13; i++) {
+			if(slideImages[i] !== '') {
+				$("#preview-image-container").prepend(
+					"<div style='background: url(\"" + newSlideImages[i] + "\") no-repeat top center; background-size: cover' class='preview-image'></div>"
+				);
+			}
+		}
+
+		// var container = document.querySelector('#preview-image-container');
+		// var msnry = new Masonry( container, {
+		//   // options
+		//   // columnWidth: 200,
+		//   itemSelector: ".preview-image",
+		//   "isFitWidth": true,
+		// });
+		// msnry.on( 'layoutComplete', function() {
+		//   console.log('layout is complete');
+		// });
+
+		// // manually trigger initial layout
+		// msnry.masonry('reload');
+
+		// with jQuery
+		// var $container = $('#preview-image-container');
+		// $container.imagesLoaded(function(){
+		// 	$container.masonry({
+		// 	  columnWidth: 200,
+		// 	  itemSelector: '.preview-image'
+		// 	})
+		// });
+
+		// $container.imagesLoaded(function(){
+		// 	console.log('the images have been loaded');
+		// });
+
+
+		slidr.create('slidr', {
+		  after: function(e) {
+		  	console.log("in: " + e.in.slidr);
+		  	// Get the slide data from the next slide
+		  	$('#slidr-container')
+		  		.css({
+		  			"background-image" : 'url("' + e.in.el.getAttribute('data-background') + '")',
+		  			'background-color' : 'transparent',
+		  			'background-position' :  'center',
+		  			'background-size' : 'cover',
+		  			'background-repeat' :  'no-repeat',
+		  			'background-position' : 'fixed'
+	  			});
+  			$(e.in.el).width(
+  				$('#slidr').width()
+			);
+
+			if(e.out.el.getAttribute('data-background') == '') {
+		  		$('#preview-image-container').css(
+		  			"visibility",
+		  			"hidden"
+	  			);
+		  	} 
+
+		  	console.log('incoming slide bg: ' + e.in.el.getAttribute('data-background'));
+		  	if(e.in.el.getAttribute('data-background') == '') {
+		  		$('#preview-image-container').css('visibility',"visible");
+		  	}
+
+			console.log("Element width: " + $(e.in.el).width());
+			console.log("Slidr width: " + $('#slidr').width());
+
+  			console.log("setting the background to: " + e.in.el.getAttribute('data-background'));
+		  },
+		  before: function(e) { 
+		  	console.log('out: ' + e.out.slidr); 
+		  	console.log('outgoing slide bg: ' + e.out.el.getAttribute('data-background'));
+		  	
+		  	// console.log(e.out.el.getAttribute('data-background'));
+		  },
+		  breadcrumbs: true,
+		  controls: 'border',
+		  direction: 'horizontal',
+		  fade: true,
+		  keyboard: true,
+		  overflow: true,
+		  theme: '#fff',
+		  timing: { 'cube': '0.5s ease-in' },
+		  touch: true,
+		  transition: 'cube'
+		}).start();
+
+	});
+
+	// Touchscreens are little bitches and we hate them.
+	if (Modernizr.touch) {
+	   $('.slide').css("font-size", "150%");
+	}
+});
+
+$( window ).resize(function() {
+	$('#slidr').width(
+		$('#slidr-container').width() - ($("#slidr-container").outerWidth() - $("#slidr-container").width())
+	);
+	$('.slide').width($('#slidr').width());
+	console.log('window resized!');
+});
+
+
+
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};

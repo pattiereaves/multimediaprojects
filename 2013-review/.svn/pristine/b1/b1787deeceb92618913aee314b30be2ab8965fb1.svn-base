@@ -1,0 +1,51 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+#slidr {
+	/*display: inline;*/
+	width: 100%;
+	margin: 1em 0;
+}
+
+.slide  {
+	margin: 1em 0;
+}
+
+aside[id="slidr-control"] {
+
+}
+
+#slidr-container, #slidr {
+	width: 100%;
+	min-height: 100%;
+}
+
+#slidr-container {
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+.jumbotron {
+	background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+

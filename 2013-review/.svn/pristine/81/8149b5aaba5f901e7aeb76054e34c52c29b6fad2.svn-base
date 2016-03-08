@@ -1,0 +1,93 @@
+$(function() {
+
+	// We need to have a set width on this slidr or it's gonna go nuts resizing.
+	$('#slidr').width(
+		$('#slidr-container').width() - ($("#slidr-container").outerWidth() - $("#slidr-container").width())
+	);
+
+	$.getJSON("js/slide-content.js", function(data) {
+		console.log('success.')
+	})
+	.fail(function() {
+		console.log('failure!!!!!');
+	})
+	.done(function ( data ) {
+		$.each( data.slides, function (i, slide) {
+
+			// get the slidr div
+			// build the html of each div inside the slidr.
+
+			var slideTemplate = "<div class='slide' id='slide" + i + "' data-slidr='" + slide.title + "' data-background='" + slide.background + "'>";
+			    slideTemplate += "<div class='slide-container'>";
+				slideTemplate += "	<h2>" + slide.title + "</h2>";
+				slideTemplate += "	<p>" + slide.description + "</p> ";
+				slideTemplate += "</div>";
+				slideTemplate += "</div>";
+
+			$("#slidr").append(slideTemplate);
+
+			$("#slidr-container")
+				.css({
+					'background-image' : 'url("' + $('.slide').first().attr('data-background') + '")',
+					'background-color' : 'transparent',
+					'background-position' :  'center',
+					'background-size' : 'cover',
+					'background-repeat' :  'no-repeat',
+					'background-position' : 'fixed' 
+				});
+
+			$('.slide').width($('#slidr').width());				
+		});
+
+		slidr.create('slidr', {
+		  after: function(e) {
+		  	console.log("in: " + e.in.slidr);
+		  	// Get the slide data from the next slide
+		  	$('#slidr-container')
+		  		.css({
+		  			"background-image" : 'url("' + e.in.el.getAttribute('data-background') + '")',
+		  			'background-color' : 'transparent',
+		  			'background-position' :  'center',
+		  			'background-size' : 'cover',
+		  			'background-repeat' :  'no-repeat',
+		  			'background-position' : 'fixed'
+	  			});
+  			$(e.in.el).width(
+  				$('#slidr').width()
+			);
+
+			console.log("Element width: " + $(e.in.el).width());
+			console.log("Slidr width: " + $('#slidr').width());
+
+  			console.log("setting the background to: " + e.in.el.getAttribute('data-background'));
+		  },
+		  before: function(e) { 
+		  	console.log('out: ' + e.out.slidr); 
+		  	// console.log(e.out.el.getAttribute('data-background'));
+		  },
+		  breadcrumbs: true,
+		  controls: 'border',
+		  direction: 'horizontal',
+		  fade: true,
+		  keyboard: true,
+		  overflow: true,
+		  theme: '#fff',
+		  timing: { 'cube': '0.5s ease-in' },
+		  touch: true,
+		  transition: 'cube'
+		}).start();
+
+	});
+
+});
+
+$( window ).resize(function() {
+	$('#slidr').width(
+		$('#slidr-container').width() - ($("#slidr-container").outerWidth() - $("#slidr-container").width())
+	);
+	$('.slide').width($('#slidr').width());
+	console.log('window resized!');
+});
+
+
+
