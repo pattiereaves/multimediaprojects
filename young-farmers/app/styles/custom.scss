@@ -1,0 +1,102 @@
+#card-2 {
+	display: none;
+}
+
+#card-17 p:last-child {
+	font-style: italic;
+}
+
+#title-slide {
+	margin-top: 5%;
+}
+
+.size-medium {
+	max-width: 500px;
+}
+
+.pullquote .caption {
+  background-color: rgb(225, 231, 241);
+  padding: 2%;
+  font-weight: 700;
+  margin-left: 0;
+  margin-right: 0;
+  max-width: 100%;
+}
+
+.cards h2 {
+	text-align: left;
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 400%;
+}
+
+.ad div {
+  text-align: center;
+  margin: 0 auto;
+}
+  
+.ad h6 {
+  text-align: center;
+  font-size: 120%;
+  color: #999;
+}
+
+.ad h6 span {display: none;}
+
+.pullquote.orientation-full {text-align: center;}
+.pullquote.orientation-left {text-align: right;}
+.pullquote.size-medium p.caption {padding: 10%;}
+.pullquote.size-big {font-size: 120%;}
+
+#card-15 p.text {
+  font-style: italic; 
+}
+
+
+/*.addthis_toolbox {
+  max-width: 664px;
+  text-align: center;
+  margin: .618em auto;
+}*/
+
+.addthis_toolbox a {
+  float: none !important;
+  display: inline-block !important;
+  line-height: 34px;
+  margin: .618em !important;
+  padding-right: 5px !important; 
+  color: white;
+  /*font-weight: normal;*/
+  font-size: 16px;
+  font-style: normal;
+}
+
+a.addthis_button_email {
+  background: #738A8D;
+}
+
+a.addthis_button_facebook {
+  background: #305891;
+}
+
+a.addthis_button_twitter {
+  background: #2CA8D2; 
+}
+
+@media (max-width: 650px) {
+  .rich-media.ad {
+    clear: both;
+    width: 100%;
+    float: none;
+    margin: 1.15384615em auto;
+    max-width: 100%;
+  }
+  .ad h6 span {display: inline}
+
+  .cards h2 {
+    margin-left: 2%;
+    margin-right: 2%;
+    font-size: 300%;
+  }
+}

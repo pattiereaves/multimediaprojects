@@ -1,0 +1,31 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+@import "richmedia.scss";
+
+
+@font-face{
+  font-family: 'ChaparralPro-Semibold';
+  src: url( 'fonts/ChaparralPro-Semibold.otf' ) format( 'opentype' );
+}
+
+@font-face{
+  font-family: 'ChaparralPro-Light';
+  src: url( 'fonts/ChaparralPro-Light.otf' ) format( 'opentype' );
+}
+
+@font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('fonts/BebasNeue-webfont.eot');
+    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/BebasNeue-webfont.woff') format('woff'),
+         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
+         url('fonts/BebasNeue-webfont.svg#bebas_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@import "custom.scss";
