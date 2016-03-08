@@ -36,12 +36,6 @@ $sans-font-stack: 'Open Sans', sans-serif;
 	}
 }
 
-ul, ol {
-	font-family: $font-stack;
-	  max-width: 600px;
-  margin: 1.618em auto;
-}
-
 #card--2 {
 
 	h2 {
@@ -56,12 +50,18 @@ ul, ol {
 	}
 }
 
-
 #card--24 {
 	h2 {
 		text-indent: initial;
 		display: block;
 	}
+}
+
+
+ul, ol {
+	font-family: $font-stack;
+	  max-width: 600px;
+  margin: 1.618em auto;
 }
 
 .addthis_toolbox {
