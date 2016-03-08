@@ -1,0 +1,118 @@
+@font-face{
+	font-family: 'Chapparral';
+	src: url( 'http://static.bangordailynews.com/wp-content/themes/bdn/fonts/chapparral/ChaparralPro-Semibold.otf' ) format( 'opentype' );
+}
+
+body {
+	font: normal 16px/27px georgia, serif;
+	background-color: #000;
+	color: #fff;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+.overlay {
+	margin-top: 1000px;
+	padding: 50px;
+	width: 400px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 999 !important;
+}
+.overlay p {
+	font-size: 1.5em;
+	line-height: 1.3em;
+	color: #fff;
+	margin: 15px 0;
+	font-family: georgia;
+}
+h1 {
+	color: #fff;
+}
+.background {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -999;
+	overflow: hidden;
+}
+.hide, .show {
+	transition: all 1.5s ease-in-out;
+	-webkit-transition: all 1.5s ease-in-out; /** Chrome & Safari **/
+	-moz-transition: all 1.5s ease-in-out; /** Firefox **/
+	-o-transition: all 1.5s ease-in-out; /** Opera **/
+}
+.hide{
+	transform: translate(0,-200%);
+	-webkit-transform: translate(0,-200%); /** Chrome & Safari **/
+	-o-transform: translate(0,-200%); /** Opera **/
+	-moz-transform: translate(0,-200%); /** Firefox **/
+}
+.show{
+	margin-top: 0px !important;
+}
+section {
+	z-index: -9999 !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+.active {
+	z-index: 9999 !important;
+}
+
+#work-area {
+	position: absolute;
+	top: 0; left: 0; 
+	overflow:hidden; 
+	height: 100%;
+	width: 100%; 
+	z-index: -99 !important;
+}
+
+#slide-container {
+	position: relative;
+	min-height: 100%;
+	margin: 0 auto;
+	padding: 0 48px;
+	overflow: hidden;
+}
+/*
+.slide-container:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+*/
+
+
+/*
+#clickme {position: absolute; bottom: 0; right: 0; z-index: 999999;}
+#fullscreen {position: absolute; bottom: 0; right: 50px; z-index: 999999;}*/
+
+
+#navigation {
+	z-index: 999;
+	background: #6d6e71;
+	padding: 10px;
+	width: 100px;
+	height: 100%;
+	color: #FFF
+	position: fixed;
+	float: right;
+	font: normal 12px/12px arial, sans-serif;
+}
+
+
+
+

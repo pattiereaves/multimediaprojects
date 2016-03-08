@@ -1,0 +1,188 @@
+@font-face{
+	font-family: 'Chapparral';
+	src: url( 'http://static.bangordailynews.com/wp-content/themes/bdn/fonts/chapparral/ChaparralPro-Semibold.otf' ) format( 'opentype' );
+}
+
+/*#clickme {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 100000;
+	padding: 5px;
+	color: #fff;
+	background: #333;
+	border-radius: 5px;
+}*/
+
+.slide .overlay p {
+	font: 18px/27px Georgia, serif;
+	padding: 20px;
+	font-size: 1.5em;
+	line-height: 1.3em;
+	color: #fff;
+}
+
+.overlay {
+	padding: 50px;
+	width: 400px;
+	height: 500px;
+}
+
+.slide .overlay h1 {
+	position: relative;
+	font: normal 64px/96px Chapparral, serif;
+	top: auto;
+	left: auto;
+	right: auto;
+	padding: 0;
+	text-align: left;
+	-webkit-transform: none;
+	-moz-transform: none;
+	-ms-transform: none;
+	-o-transform: none;
+	transform: none;
+}
+
+/* Navigation */
+
+#bdn-overlay {
+	z-index: 1000;
+	position: absolute;
+	bottom: 80px;
+	right: 30px;
+}
+
+#bdn-overlay a {
+	display: block;
+	background: url('../img/bdn2012BDNMaine.jpg') top center no-repeat;
+	width: 57px;
+	height: 57px;
+	text-indent: -1000px;
+	overflow: hidden;
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+/*
+#navigation {
+	z-index: 999;
+	background: #6d6e71;
+	padding: 10px;
+	width: 100px;
+	height: 100%;
+	color: #FFF;
+	position: relative;
+	float: right;
+	font: normal 12px/12px arial, sans-serif;
+}
+
+#navigation ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+#navigation ul li {
+	margin-bottom: 20px;
+}
+#navigation ul li:last-child {
+	margin-bottom: 0;
+}
+
+#navigation ul li h2 {
+	font: bold 12px/12px arial, sans-serif;
+	margin: 2px 0;
+	color: #fcb316;
+}
+
+#navigation h1 {
+	font: bold 18px/18px arial, sans-serif;
+	text-transform: uppercase;
+}
+
+#navigation .share {
+	position: absolute;
+	bottom: 30px;
+	text-align: center;
+}*/
+
+.share a {
+	color: #a9a9ab;
+	background: url('../img/share_sprite.png') no-repeat top left;
+	background-position: 0 0;
+	padding: 0 0 0 20px;
+	margin: 0 0 0 25px; /* To center */
+	text-decoration: none;
+	font: normal 13px/24px arial, serif;
+}
+
+.share a:hover {
+	color: #fff;
+	background-position: 0 -15px;
+}
+
+.chapters {
+	position: absolute;
+	top: 50%;
+	height: 371px;
+	margin: -185.5px 10px 0 0;
+}
+
+/* These styles are cribbed from core sheets to move them to a nav bar. */
+.deck-prev-link {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.deck-next-link {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  margin-top: 10px;
+}
+
+ .deck-prev-link, .deck-next-link {
+  background: #ccc;
+  font-family: serif;
+}
+ .deck-prev-link, .deck-prev-link:hover, deck-prev-link:focus, .deck-prev-link:active, .deck-prev-link:visited, .deck-next-link,  .deck-next-link:hover, .deck-next-link:focus, .deck-next-link:active, .deck-next-link:visited {
+  color: #fff;
+}
+.deck-prev-link:hover, .deck-prev-link:focus,.deck-next-link:hover,  .deck-next-link:focus {
+  background: #c00;
+  text-decoration: none;
+}
+.deck-prev-link, .deck-next-link {
+  z-index: 3;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 32px;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background: #888;
+}
+.borderradius .deck-prev-link, .borderradius .deck-next-link {
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  border-radius: 16px;
+}
+.deck-prev-link:hover, .deck-prev-link:focus, .deck-prev-link:active, .deck-prev-link:visited, .deck-next-link:hover, .deck-next-link:focus, .deck-next-link:active, .deck-next-link:visited {
+  color: #fff;
+}
+
+.deck-prev-link, .deck-next-link {
+  display: block;
+}
+.deck-prev-link.deck-nav-disabled, .touch .deck-prev-link, .deck-next-link.deck-nav-disabled, .touch .deck-container:hover .deck-next-link {
+  visibility: hidden;
+}
+
